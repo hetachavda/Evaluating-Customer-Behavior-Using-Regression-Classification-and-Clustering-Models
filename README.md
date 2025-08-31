@@ -1,4 +1,3 @@
-Perfect 👍 I’ll prepare a **professional and attractive `README.md`** for your **Classic Car Dealership Analytics Project** based on your case study report. You can copy–paste it directly into GitHub.
 
 ---
 
