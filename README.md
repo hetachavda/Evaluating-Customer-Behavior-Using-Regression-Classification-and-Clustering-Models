@@ -37,3 +37,19 @@ SELECT country, state, city, COUNT(customerNumber) AS num_customers,
 FROM classicmodels.customers
 GROUP BY country, state, city
 ORDER BY num_customers DESC;
+
+-- Top-selling products
+SELECT p.productCode, p.productName,
+       SUM(od.quantityOrdered * od.priceEach) AS total_sales
+FROM classicmodels.orderdetails od
+JOIN classicmodels.products p ON od.productCode = p.productCode
+GROUP BY p.productCode, p.productName
+ORDER BY total_sales DESC;
+
+-- Monthly sales trends
+SELECT YEAR(orderDate) AS year, MONTH(orderDate) AS month,
+       SUM(od.quantityOrdered * od.priceEach) AS monthly_sales
+FROM classicmodels.orders o
+JOIN classicmodels.orderdetails od ON o.orderNumber = od.orderNumber
+GROUP BY year, month
+ORDER BY year, month;
