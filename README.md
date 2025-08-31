@@ -1,7 +1,4 @@
 
----
-
-````markdown
 # 🚗 Classic Car Dealership Analytics  
 
 A **data analytics project** leveraging SQL, visualization, and machine learning techniques to analyze **customer behavior, sales trends, and marketing performance** for a classic car dealership.  
