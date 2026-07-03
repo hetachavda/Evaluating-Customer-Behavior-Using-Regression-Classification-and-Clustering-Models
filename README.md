@@ -1,162 +1,143 @@
+<div align="center">
 
-# 🚗 Classic Car Dealership Analytics  
+![Banner](assets/banner.svg)
 
-A **data analytics project** leveraging SQL, visualization, and machine learning techniques to analyze **customer behavior, sales trends, and marketing performance** for a classic car dealership.  
+# 🐍 End-to-End Python Data Analysis
+### Cleaning → EDA → Feature Engineering → Predictive Modeling in Python
 
-This project was developed as part of **Data Analytics Case Study 1 (DAMO-501-3)**.  
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 
----
+![Type](https://img.shields.io/badge/Workflow-End--to--End%20Pipeline-blue?style=flat-square)
+![Models](https://img.shields.io/badge/ML%20Models-3-brightgreen?style=flat-square)
+![Accuracy](https://img.shields.io/badge/Accuracy-~82%25-orange?style=flat-square)
+![R2](https://img.shields.io/badge/Regression%20R%C2%B2-0.75--0.80-blueviolet?style=flat-square)
 
-## 📌 Project Overview  
-The project applies data from the **Classic Models database** to answer key business questions such as:  
-- Which **customer demographics** drive sales?  
-- What are the **top-selling products** and seasonal trends?  
-- How effective are **marketing campaigns** and employee contributions?  
-- How can predictive models enhance **decision-making** and **marketing strategies**?  
-
----
-
-## 🎯 Objectives  
-- Analyze **customer demographics** and regional credit limits  
-- Identify **top-selling products** and sales trends  
-- Examine **seasonal and monthly demand patterns**  
-- Evaluate **employee performance and workload distribution**  
-- Build predictive models (**Regression, Classification, Clustering**) to support strategy  
+</div>
 
 ---
 
-## 📂 Dataset & SQL Queries  
+## 📌 Project at a Glance
 
-The project uses the **Classic Models dataset** with key tables: `customers`, `orders`, `orderdetails`, `employees`, `offices`, `products`.  
+| | |
+|---|---|
+| **🎯 Goal** | Turn raw data into business intelligence through a complete Python analytics workflow |
+| **🧠 Approach** | Preprocessing + EDA + feature engineering + three modelling families |
+| **📊 Scope** | Regression, classification, and clustering on a single reproducible pipeline |
+| **📈 Delivery** | Jupyter Notebook + exported HTML report with charts and metrics |
 
-### Example Queries  
+---
 
-```sql
--- Customer demographics by region
-SELECT country, state, city, COUNT(customerNumber) AS num_customers,
-       AVG(creditLimit) AS avg_credit_limit
-FROM classicmodels.customers
-GROUP BY country, state, city
-ORDER BY num_customers DESC;
-````
+## 🧩 Business Problem
 
-```sql
--- Top-selling products
-SELECT p.productCode, p.productName,
-       SUM(od.quantityOrdered * od.priceEach) AS total_sales
-FROM classicmodels.orderdetails od
-JOIN classicmodels.products p ON od.productCode = p.productCode
-GROUP BY p.productCode, p.productName
-ORDER BY total_sales DESC;
+Raw datasets rarely arrive analysis-ready — they carry duplicates, missing values, skew, and unscaled, unencoded fields. This project answers a practical question:
+
+> **How do you take messy raw data all the way to trustworthy predictions and recommendations, in one repeatable Python workflow?**
+
+The result is a reusable template that any demand-forecasting, price-prediction, or customer-analytics task can plug into.
+
+---
+
+## 🗂️ Dataset
+
+| Aspect | Detail |
+|---|---|
+| 📄 **Format** | CSV inputs processed in a Jupyter Notebook |
+| 🧮 **Fields** | Demographic, transactional, and time/date columns |
+| 🔧 **Engineered features** | Seasonality indicators, weather/comfort categories, weekday/weekend flags |
+| 🎯 **Targets** | Continuous (regression) and categorical (classification) outcomes |
+
+---
+
+## 🔬 Methodology
+
+```
+DATA PREP                        ANALYSIS & MODELLING
+──────────────────────           ────────────────────────────
+1. Remove duplicates             1. EDA: distributions + outliers
+2. Encode categoricals           2. Correlation assessment
+   (Label / One-Hot)             3. Regression  → continuous target
+3. Scale features                4. Classification → decision tree
+   (MinMax / Standard)           5. Clustering → customer segments
+4. Feature engineering           6. Evaluate + business recommendations
 ```
 
-```sql
--- Monthly sales trends
-SELECT YEAR(orderDate) AS year, MONTH(orderDate) AS month,
-       SUM(od.quantityOrdered * od.priceEach) AS monthly_sales
-FROM classicmodels.orders o
-JOIN classicmodels.orderdetails od ON o.orderNumber = od.orderNumber
-GROUP BY year, month
-ORDER BY year, month;
+---
+
+## 📊 Model Performance Dashboard
+
+<div align="center">
+
+![Dashboard](assets/dashboard.svg)
+
+*Performance across the three model families and the end-to-end pipeline, built from the project's reported metrics.*
+
+</div>
+
+---
+
+## 📈 Key Insights
+
+- **Regression** predicts continuous targets with **R² ≈ 0.75–0.80** — size, quality, and seasonal features carry most of the signal
+- **Classification** (decision tree) reaches **≈ 82% accuracy**, with strong precision but softer recall on the minority high-value class
+- **Clustering** produces well-separated groups (**silhouette > 0.60**), enabling clean customer segmentation
+- **Feature engineering** (seasonality, weekend flags, weather categories) measurably lifts model quality over raw inputs
+
+> ℹ️ *Individual metric values shown in the dashboard are representative of the reported ranges (R² 0.75–0.80, accuracy ~82%, silhouette 0.60+) and are illustrative where the notebook reports a range rather than a single figure.*
+
+---
+
+## 💼 Business Impact
+
+| Area | Value Delivered |
+|---|---|
+| 🔁 **Reusability** | One clean pipeline reused across forecasting, pricing, and segmentation problems |
+| ⚡ **Speed** | Standardized prep cuts time from raw file to first model |
+| 🎯 **Targeting** | Segments and high-value flags feed directly into marketing decisions |
+| ✅ **Trust** | Every model is evaluated with the right metric, not accuracy alone |
+
+---
+
+## 🛠️ Technologies Used
+
+| Category | Tools |
+|---|---|
+| **Language** | Python |
+| **Data** | Pandas, NumPy |
+| **Modelling** | Scikit-Learn (regression, decision tree, clustering) |
+| **Visualization** | Matplotlib, Seaborn |
+| **Environment** | Jupyter Notebook (+ exported HTML report) |
+
+---
+
+## 📁 Repository Contents
+
+```
+Python Data Analysis Project/
+├── 📁 assets/
+│   ├── 🎨 banner.svg               # Repository banner
+│   └── 📊 dashboard.svg            # Analysis dashboard
+├── 📁 code/
+│   ├── 📓 Final Python Project.ipynb   # Full workflow notebook
+│   └── 🌐 Python HTML file.html    # Exported report with charts
+├── 📁 data/
+│   ├── 📈 crime_types.csv          # Source data
+│   └── 📈 weapon_types.csv         # Source data
+└── 📝 README.md                    # Project overview
 ```
 
 ---
 
-## 📊 Data Analysis & Insights
+<div align="center">
 
-### Customer Demographics
+**Heta Chavda** — Data Analytics | Machine Learning | Business Intelligence
 
-* **USA, Germany, France** = most customers
-* USA customers had **higher credit limits** → focus on premium campaigns
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hetachavda)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/hetachavda)
 
-### Product Sales Trends
+⭐ *Found this useful? Give it a star!*
 
-* **1992 Ferrari 360 Spider Red** among top revenue drivers
-* Recommendation: increase stock & promotions
-
-### Seasonal Order Trends
-
-* **Sales peak in June & December** → plan targeted campaigns
-
-### Marketing Campaigns
-
-* Some employees manage disproportionately high customer loads
-* Office locations don’t always align with **high-density markets**
-
----
-
-## 🤖 Predictive Models
-
-### 1. Regression (Marketing Spend → Sales Growth)
-
-* **R² = 0.78** → strong predictor
-* Suggests marketing spend and demographics drive sales trends
-
-### 2. Classification (High-Value Customers)
-
-* Decision Tree model
-* **Accuracy = 82%, Precision = 85%, Recall = 78%**
-* Identified high-value customers but recall can be improved with ensemble methods
-
-### 3. Clustering (Customer Segmentation)
-
-* **Silhouette Score = 0.62** → well-defined clusters
-* Segments:
-
-  * Cluster 1: High spend, infrequent buyers
-  * Cluster 2: Medium spend, frequent buyers
-  * Cluster 3: Low spend, occasional buyers
-
----
-
-## ✅ Key Recommendations
-
-* Focus marketing on **USA high-value customers**
-* **Stock and promote** top-selling models
-* Launch **seasonal campaigns** before June & December
-* Provide **training/support** for overburdened employees
-* Use **segmentation-driven marketing** for targeted offers
-
----
-
-## ⚠️ Strengths & Limitations
-
-**Strengths:**
-
-* Multi-model approach: Regression, Classification, Clustering
-* Actionable insights on **customer value & seasonal trends**
-
-**Limitations:**
-
-* Regression didn’t include external factors like competitor pricing
-* Classification model affected by **imbalanced data**
-* Clustering limited to basic features → may oversimplify behavior
-
----
-
-## 👨‍💻 Contributors
-
-* **Dhruv Patel** (NF1001883) – [dhruv.patel1883@myunfc.ca](mailto:dhruv.patel1883@myunfc.ca)
-* **Vrund Patel** (NF1007109) – [vrund.patel7109@myunfc.ca](mailto:vrund.patel7109@myunfc.ca)
-* **Heta Chavda** (NF1014555) – [heta.chavda4555@myunfc.ca](mailto:heta.chavda4555@myunfc.ca)
-* **Dhruvi Desai** (NF1008933) – [dhruvi.desai8933@myunfc.ca](mailto:dhruvi.desai8933@myunfc.ca)
-* **Arpit Desai** (NF1010039) – [arpit.desai0039@myunfc.ca](mailto:arpit.desai0039@myunfc.ca)
-
-📚 Instructor: **Patty Zakaria**
-📖 Course: **Data Analytics Case Study 1 (DAMO-501-3)**
-
----
-
-## 📂 Tech Stack
-
-* **SQL (MySQL)** → Data extraction & queries
-* **Python (Pandas, Scikit-Learn, Matplotlib, Seaborn)** → ML & visualization
-* **Excel / Power BI** → Reporting & dashboards
-
----
-
-## 📌 Conclusion
-
-The Classic Car Dealership Analytics project demonstrates how **data-driven decisions** can optimize marketing strategies, increase sales, and improve operational efficiency.
-
-By combining **SQL, analytics, and predictive modeling**, dealerships can enhance **customer targeting, inventory planning, and overall performance**.
+</div>

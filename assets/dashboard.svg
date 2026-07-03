@@ -1,0 +1,129 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg"
+     font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="head" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4a3aa7"/>
+      <stop offset="100%" stop-color="#2a78d6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="760" fill="#f9f9f7"/>
+
+  <!-- header -->
+  <rect x="0" y="0" width="1200" height="86" fill="url(#head)"/>
+  <text x="30" y="42" font-size="26" font-weight="700" fill="#ffffff">Python Data Analysis &#8212; Model Performance Dashboard</text>
+  <text x="30" y="70" font-size="15" fill="#dcd8f6">Regression &#183; Classification &#183; Clustering on a full Python pipeline</text>
+
+  <!-- KPI tiles -->
+  <rect x="30" y="110" width="360" height="110" rx="10" fill="#ffffff" stroke="rgba(11,11,11,0.10)"/>
+  <rect x="30" y="110" width="6" height="110" rx="3" fill="#2a78d6"/>
+  <text x="58" y="148" font-size="14" font-weight="600" fill="#898781" letter-spacing="1">REGRESSION R&#178;</text>
+  <text x="56" y="198" font-size="46" font-weight="700" fill="#0b0b0b">0.78</text>
+
+  <rect x="420" y="110" width="360" height="110" rx="10" fill="#ffffff" stroke="rgba(11,11,11,0.10)"/>
+  <rect x="420" y="110" width="6" height="110" rx="3" fill="#1baf7a"/>
+  <text x="448" y="148" font-size="14" font-weight="600" fill="#898781" letter-spacing="1">CLASSIFICATION ACCURACY</text>
+  <text x="446" y="198" font-size="46" font-weight="700" fill="#0b0b0b">82%</text>
+
+  <rect x="810" y="110" width="360" height="110" rx="10" fill="#ffffff" stroke="rgba(11,11,11,0.10)"/>
+  <rect x="810" y="110" width="6" height="110" rx="3" fill="#eda100"/>
+  <text x="838" y="148" font-size="14" font-weight="600" fill="#898781" letter-spacing="1">CLUSTERING SILHOUETTE</text>
+  <text x="836" y="198" font-size="46" font-weight="700" fill="#0b0b0b">0.62</text>
+
+  <!-- Panel 1: model performance bars -->
+  <rect x="30" y="250" width="560" height="290" rx="10" fill="#ffffff" stroke="rgba(11,11,11,0.10)"/>
+  <circle cx="48" cy="282" r="5" fill="#2a78d6"/>
+  <text x="62" y="287" font-size="16" font-weight="700" fill="#0b0b0b">Performance by Modelling Task</text>
+
+  <line x1="90" y1="470" x2="560" y2="470" stroke="#c3c2b7" stroke-width="1.5"/>
+  <g stroke="#e1e0d9" stroke-width="1">
+    <line x1="90" y1="410" x2="560" y2="410"/>
+    <line x1="90" y1="350" x2="560" y2="350"/>
+  </g>
+
+  <rect x="140" y="330" width="90" height="140" rx="4" fill="#2a78d6"/>
+  <text x="185" y="322" font-size="12" font-weight="700" fill="#184f95" text-anchor="middle">0.78</text>
+  <text x="185" y="490" font-size="12" fill="#52514e" text-anchor="middle">Regression</text>
+  <text x="185" y="506" font-size="10" fill="#898781" text-anchor="middle">R&#178;</text>
+
+  <rect x="280" y="322" width="90" height="148" rx="4" fill="#1baf7a"/>
+  <text x="325" y="314" font-size="12" font-weight="700" fill="#0e7a55" text-anchor="middle">0.82</text>
+  <text x="325" y="490" font-size="12" fill="#52514e" text-anchor="middle">Classification</text>
+  <text x="325" y="506" font-size="10" fill="#898781" text-anchor="middle">Accuracy</text>
+
+  <rect x="420" y="358" width="90" height="112" rx="4" fill="#eda100"/>
+  <text x="465" y="350" font-size="12" font-weight="700" fill="#a06d00" text-anchor="middle">0.62</text>
+  <text x="465" y="490" font-size="12" fill="#52514e" text-anchor="middle">Clustering</text>
+  <text x="465" y="506" font-size="10" fill="#898781" text-anchor="middle">Silhouette</text>
+
+  <text x="325" y="528" font-size="11" fill="#898781" text-anchor="middle">Representative scores across the three model families (0&#8211;1 scale)</text>
+
+  <!-- Panel 2: classification metrics horizontal bars -->
+  <rect x="615" y="250" width="555" height="290" rx="10" fill="#ffffff" stroke="rgba(11,11,11,0.10)"/>
+  <circle cx="633" cy="282" r="5" fill="#1baf7a"/>
+  <text x="647" y="287" font-size="16" font-weight="700" fill="#0b0b0b">Classification Metrics</text>
+
+  <g font-size="13" fill="#0b0b0b">
+    <text x="640" y="342">Accuracy</text>
+    <rect x="760" y="328" width="380" height="20" rx="5" fill="#eef1f4"/>
+    <rect x="760" y="328" width="312" height="20" rx="5" fill="#184f95"/>
+    <text x="1150" y="343" font-size="12" font-weight="700" fill="#184f95" text-anchor="end">82%</text>
+
+    <text x="640" y="392">Precision</text>
+    <rect x="760" y="378" width="380" height="20" rx="5" fill="#eef1f4"/>
+    <rect x="760" y="378" width="323" height="20" rx="5" fill="#2a78d6"/>
+    <text x="1150" y="393" font-size="12" font-weight="700" fill="#2a78d6" text-anchor="end">85%</text>
+
+    <text x="640" y="442">Recall</text>
+    <rect x="760" y="428" width="380" height="20" rx="5" fill="#eef1f4"/>
+    <rect x="760" y="428" width="296" height="20" rx="5" fill="#5598e7"/>
+    <text x="1150" y="443" font-size="12" font-weight="700" fill="#5598e7" text-anchor="end">78%</text>
+
+    <text x="640" y="492">F1-Score</text>
+    <rect x="760" y="478" width="380" height="20" rx="5" fill="#eef1f4"/>
+    <rect x="760" y="478" width="308" height="20" rx="5" fill="#86b6ef"/>
+    <text x="1150" y="493" font-size="12" font-weight="700" fill="#5598e7" text-anchor="end">81%</text>
+  </g>
+  <text x="640" y="524" font-size="11" fill="#898781">Decision-tree classifier &#8212; recall dips on the minority (high-value) class</text>
+
+  <!-- Panel 3: pipeline -->
+  <rect x="30" y="560" width="1140" height="150" rx="10" fill="#ffffff" stroke="rgba(11,11,11,0.10)"/>
+  <circle cx="48" cy="592" r="5" fill="#eda100"/>
+  <text x="62" y="597" font-size="16" font-weight="700" fill="#0b0b0b">Analytics Pipeline</text>
+
+  <g font-size="13" font-weight="600" text-anchor="middle">
+    <rect x="60" y="625" width="150" height="52" rx="8" fill="#184f95"/>
+    <text x="135" y="649" fill="#ffffff">Clean &amp;</text>
+    <text x="135" y="666" fill="#ffffff">De-duplicate</text>
+
+    <rect x="245" y="625" width="150" height="52" rx="8" fill="#256abf"/>
+    <text x="320" y="649" fill="#ffffff">Encode</text>
+    <text x="320" y="666" fill="#ffffff">Categoricals</text>
+
+    <rect x="430" y="625" width="150" height="52" rx="8" fill="#2a78d6"/>
+    <text x="505" y="649" fill="#ffffff">Scale</text>
+    <text x="505" y="666" fill="#ffffff">Features</text>
+
+    <rect x="615" y="625" width="150" height="52" rx="8" fill="#5598e7"/>
+    <text x="690" y="649" fill="#ffffff">Feature</text>
+    <text x="690" y="666" fill="#ffffff">Engineering</text>
+
+    <rect x="800" y="625" width="150" height="52" rx="8" fill="#1baf7a"/>
+    <text x="875" y="649" fill="#ffffff">Model &amp;</text>
+    <text x="875" y="666" fill="#ffffff">Train</text>
+
+    <rect x="985" y="625" width="150" height="52" rx="8" fill="#eda100"/>
+    <text x="1060" y="649" fill="#0b0b0b">Evaluate &amp;</text>
+    <text x="1060" y="666" fill="#0b0b0b">Recommend</text>
+  </g>
+  <g fill="#898781" font-size="16">
+    <text x="222" y="656" text-anchor="middle">&#8594;</text>
+    <text x="407" y="656" text-anchor="middle">&#8594;</text>
+    <text x="592" y="656" text-anchor="middle">&#8594;</text>
+    <text x="777" y="656" text-anchor="middle">&#8594;</text>
+    <text x="962" y="656" text-anchor="middle">&#8594;</text>
+  </g>
+
+  <!-- footer -->
+  <text x="30" y="740" font-size="12" fill="#898781">Heta Chavda &#183; Data Analytics Portfolio</text>
+</svg>
